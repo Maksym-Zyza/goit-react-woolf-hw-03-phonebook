@@ -43,6 +43,24 @@ export class App extends Component {
     }));
   };
 
+  componentDidMount() {
+    const localData = localStorage.getItem('contacts');
+    if (localData && JSON.parse(localData).length > 0) {
+      this.setState({ contacts: JSON.parse(localData) });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.contacts.length !== this.state.contacts.length) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+    if (prevState.contacts.length > this.state.contacts.length) {
+      console.log('Deleted successfully');
+    } else if (prevState.contacts.length < this.state.contacts.length) {
+      console.log('Created successfully');
+    }
+  }
+
   render() {
     const { contacts, filter } = this.state;
     return (
