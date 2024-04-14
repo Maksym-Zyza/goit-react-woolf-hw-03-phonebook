@@ -1,0 +1,109 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #484848;
+  h1 {
+    text-align: center;
+    font-size: 28px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #484848;
+    border-radius: 8px;
+    input {
+      margin: 8px 0;
+      padding: 4px 10px;
+      font-size: 16px;
+      border: 1px solid #484848;
+      border-radius: 8px;
+      transition: border 0.5s ease;
+      &:hover {
+        border: 1px solid #3a78d9;
+      }
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #3a78d9;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      &:hover {
+        background-color: #0957d0;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 20px;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 320px;
+      margin: 10px;
+      padding: 4px 12px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+      button {
+        margin-left: 12px;
+        padding: 4px 8px;
+        border: 1px solid #484848;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+        &:hover {
+          background-color: #f77b72;
+        }
+      }
+    }
+  }
+}
+
+.filter {
+  position: relative;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  label {
+    margin-bottom: 8px;
+  }
+  input {
+    padding: 4px 10px;
+    padding-left: 32px;
+    min-width: 186px;
+    font-size: 16px;
+    border: 1px solid #484848;
+    border-radius: 8px;
+    transition: border 0.5s ease;
+  }
+  svg {
+    position: absolute;
+    left: 12px;
+    top: 40px;
+    transform: translateY(-50%);
+    fill: grey;
+    transition: fill 0.5s ease;
+  }
+  &:hover {
+    input {
+      border: 1px solid #3a78d9;
+    }
+    svg {
+      fill: #3a78d9;
+    }
+  }
+}
